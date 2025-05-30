@@ -51,10 +51,25 @@
         </div>
       </header>
       <main class="mdl-layout__content">
-        <div class="right-image">
+        <div class="image">
+          <img id="coinGif">
           <img src="./images/coin-flip.gif" alt="Coin fliping" />
         </div>
         <div class="page-content"></div>
+
+        <p>Click Button to Flip Coin</p>
+
+
+           <button
+            class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
+            onclick="flipCoin()"
+            type="button"
+          >
+             Flip
+          </button>
+          <br />
+          <div class="page-content-answer">
+            <div id="result"></div>
       </main>
     </div>
   </body>
