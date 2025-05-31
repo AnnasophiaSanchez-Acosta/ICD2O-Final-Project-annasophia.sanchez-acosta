@@ -2,7 +2,6 @@
 // Created on: May 2025
 // This is Menu Scene
 
-
 /**
  * This class is the Menu Scene.
  */
@@ -10,8 +9,8 @@ class MenuScene extends Phaser.Scene {
   /**
    * This method is the constructor.
    */
-  constructor() {
-    super({ key: "menuScene" })
+  constructor () {
+    super({ key: 'menuScene' })
     this.backgroundMenu = null
     this.startButton = null
   }
@@ -21,14 +20,15 @@ class MenuScene extends Phaser.Scene {
    *   before preload() and create().
    * @param {object} data - Any data passed via ScenePlugin.add() or  ScenePlugin.start().
    */
-  init(data) {
+  init (data) {
+    // nothing yet
   }
   /**
    * Can be defined own your own Scenes.
    * Use it to load assets.
    */
-  preload() {
-    console.log("Menu Scene")
+  preload () {
+    console.log('Menu Scene')
     this.load.image('Background-Menu', './images/backgroundMenu.png')
     this.load.image('Start-Button', './images/startButton.png')
   }
@@ -38,13 +38,12 @@ class MenuScene extends Phaser.Scene {
    * @param {object} data - Any data passed via ScenePlugin.add() or  ScenePlugin.start().
    */
   create(data) {
-    this.backgroundMenu = this.add.sprite(0, 0, "Background-Menu")
+    this.backgroundMenu = this.add.sprite(0, 0, 'Background-Menu')
     this.backgroundMenu.x = 1920 / 2
     this.backgroundMenu.y = 1080 / 2
-
-    this.startButton = this.add.sprite (1920 / 2, 1080 / 2 + 100, "Start-Button")
+    this.startButton = this.add.sprite (1920 / 2, 1080 / 2 + 100, 'Start-Button')
     this.startButton.setInteractive({ useHandCursor: true })
-    this.startButton.on("pointerdown", () => this.clickButton())
+    this.startButton.on('pointerdown', () => this.clickButton())
   }
 
   /**
@@ -57,8 +56,8 @@ class MenuScene extends Phaser.Scene {
     // pass
   }
 
-  clickButton() {
-    this.scene.start("gameScene")
+  clickButton () {
+    this.scene.start('gameScene')
   }
 }
 
