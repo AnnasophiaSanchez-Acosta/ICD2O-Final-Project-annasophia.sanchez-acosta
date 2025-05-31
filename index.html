@@ -34,41 +34,10 @@
     />
     <link rel="manifest" href="./site.webmanifest" />
     <title>Coin Flip Final Assignment</title>
-    <script src="https://cdn.jsdelivr.net/npm/phaser@3/dist/phaser.js"></script>
   </head>
 
   <body>
-    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-    <script defer src="./js/game.js"></script>
-    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-      <header class="mdl-layout__header">
-        <div class="mdl-layout__header-row">
-          <span class="mdl-layout-title">Coin Flip Final Assignment</span>
-        </div>
-        <div class="mdl-layout__header-row">
-          <span class="mdl-layout-title"> </span>
-        </div>
-      </header>
-      <main class="mdl-layout__content">
-        <div class="image">
-          <img src="./images/coin-flip.gif" alt="Coin fliping" />
-        </div>
-        <div class="page-content"></div>
-
-        <h3>Click Button to Flip Coin</h3>
-
-        <button
-          class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
-          onclick="flipCoin()"
-          type="button"
-        >
-          Flip
-        </button>
-        <br />
-        <div class="page-content-answer">
-          <div id="result"></div>
-        </div>
-      </main>
-    </div>
+    <script src="//cdn.jsdelivr.net/npm/phaser@3.54/dist/phaser.js"></script>
+    <script type="module" src="./js/game.js"></script>
   </body>
 </html>

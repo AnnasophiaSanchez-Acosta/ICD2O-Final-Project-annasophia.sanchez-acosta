@@ -53,7 +53,7 @@ class MenuScene extends Phaser.Scene {
    * @param {} delta The delta time in ms since the last frame.
    */
   update(time, delta) {
-    // pass
+     // 
   }
 
   clickButton () {
