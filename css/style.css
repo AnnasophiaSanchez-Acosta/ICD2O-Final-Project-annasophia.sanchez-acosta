@@ -1,4 +1,4 @@
-/**Created on: Sep 2020
+/** Created on: Sep 2020
 * This file contains the CSS for index.html
 */
 .mdl-layout__header-row {
@@ -23,7 +23,7 @@
 }
 
 body {
-  background: rgb(189 161 228);
+  background: #e2d8fa;
 }
 
 img {

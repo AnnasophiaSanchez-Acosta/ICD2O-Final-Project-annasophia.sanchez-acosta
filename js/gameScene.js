@@ -6,3 +6,5 @@
  * This class is Game Scene
  */
 
+class GameScene extends Phaser.Scene {
+}

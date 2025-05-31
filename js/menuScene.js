@@ -1,11 +1,65 @@
 // Created by: Anna S.
 // Created on: May 2025
-// This is Game Scene
+// This is Menu Scene
 
 
-/** 
- * This class is Menu Scene
+/**
+ * This class is the Menu Scene.
  */
- preload() {
-    console.log("Menu Scene")
+class MenuScene extends Phaser.Scene {
+  /**
+   * This method is the constructor.
+   */
+  constructor() {
+    super({ key: "menuScene" })
+    this.menuSceneBackgroundImage = null
+    this.startButton = null
   }
+  /**
+   * Can be define on your own Scenes.
+   * This method is called by the Scene Manager when the scene starts,
+   *   before preload() and create().
+   * @param {object} data - Any data passed via ScenePlugin.add() or  ScenePlugin.start().
+   */
+  init(data) {
+  }
+  /**
+   * Can be defined own your own Scenes.
+   * Use it to load assets.
+   */
+  preload() {
+    console.log("Menu Scene")
+    this.load.image('Background-Menu', './images/backgroundMenu.png')
+    this.load.image('Start-Button", './images/startButton.png')
+  }
+  /**
+   * Can be defined own your own Scenes.
+   * Use it to create your game objects.
+   * @param {object} data - Any data passed via ScenePlugin.add() or  ScenePlugin.start().
+   */
+  create(data) {
+    this.menuSceneBackgroundImage = this.add.sprite(0, 0, "Background-Menu")
+    this.menuSceneBackgroundImage.x = 1920 / 2
+    this.menuSceneBackgroundImage.y = 1080 / 2
+
+    this.startButton = this.add.sprite (1920 / 2, 1080 / 2 + 100, "Start-Button")
+    this.startButton.setInteractive({ useHandCursor: true })
+    this.startButton.on("pointerdown", () => this.clickButton())
+  }
+
+  /**
+   * Should be overridden by your own Scenes.
+   * This method is called once per game step while the scene is running.
+   * @param {} time - The current time
+   * @param {} delta The delta time in ms since the last frame.
+   */
+  update(time, delta) {
+    // pass
+  }
+
+  clickButton() {
+    this.scene.start("gameScene")
+  }
+}
+
+export default MenuScene

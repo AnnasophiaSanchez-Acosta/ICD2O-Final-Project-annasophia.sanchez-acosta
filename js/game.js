@@ -1,10 +1,10 @@
-//Created by Mr. Coxall updated by Anna S.
-//Created on April 2025
-//This is the Phaser3 game configuration file
+// Created by Mr. Coxall updated by Anna S.
+// Created on April 2025
+// This is the Coin Flip game configuration file
 
 // scene import statements
-import MenuScene from "./menuScene.js"
-import GameScene from "./gameScene.js"
+import MenuScene from './menuScene.js'
+import GameScene from './gameScene.js'
 
 // create the new scenes
 const menuScene = new MenuScene()
@@ -14,31 +14,30 @@ const gameScene = new GameScene()
  * Start Coin Flip Game
  */
 const config = {
-  type: CoinFlip.AUTO,
+  type: Phaser.AUTO,
   width: 1920,
   height: 1080,
   physics: {
-    default: "arcade",
+    default: 'arcade',
     arcade: {
-      debug: false,
+      debug: false
     },
   },
   // set background color
-  backgroundColor: 0x5f6e7a,
+  backgroundColor:rgb(207, 195, 235),
   scale: {
-    mode: CoinFlip.Scale.FIT,
+    mode: Phaser.Scale.FIT,
     // we place it in the middle of the page
-    autoCenter: CoinFlip.Scale.CENTER_BOTH,
-  },
+    autoCenter: Phaser.Scale.CENTER_BOTH
+  }
 }
-const game = new CoinFlip.Game(config)
+const game = new Phaser.Game(config)
 //console.log(game)
 
 // load scenes
 // Note: remember any "key" is global and can not be reused
-game.scene.add("menuScene", menuScene)
-game.scene.add("gameScene", gameScene)
+game.scene.add('menuScene', menuScene)
+game.scene.add('gameScene', gameScene)
 
 // the start scene
-game.scene.start("menuScene")
-
+game.scene.start('menuScene')
