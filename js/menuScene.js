@@ -14,6 +14,7 @@ class MenuScene extends Phaser.Scene {
     this.backgroundMenu = null
     this.startButton = null
   }
+  
   /**
    * Can be define on your own Scenes.
    * This method is called by the Scene Manager when the scene starts,
@@ -21,8 +22,9 @@ class MenuScene extends Phaser.Scene {
    * @param {object} data - Any data passed via ScenePlugin.add() or  ScenePlugin.start().
    */
   init (data) {
-    // nothing yet
+    this.cameras.main.setBackgroundColor("ffffff")
   }
+
   /**
    * Can be defined own your own Scenes.
    * Use it to load assets.
@@ -32,12 +34,13 @@ class MenuScene extends Phaser.Scene {
     this.load.image('Background-Menu', './images/backgroundMenu.png')
     this.load.image('Start-Button', './images/startButton.png')
   }
+
   /**
    * Can be defined own your own Scenes.
    * Use it to create your game objects.
    * @param {object} data - Any data passed via ScenePlugin.add() or  ScenePlugin.start().
    */
-  create(data) {
+  create (data) {
     this.backgroundMenu = this.add.sprite(0, 0, 'Background-Menu')
     this.backgroundMenu.x = 1920 / 2
     this.backgroundMenu.y = 1080 / 2
@@ -52,7 +55,7 @@ class MenuScene extends Phaser.Scene {
    * @param {} time - The current time
    * @param {} delta The delta time in ms since the last frame.
    */
-  update(time, delta) {
+  update (time, delta) {
      // 
   }
 
