@@ -1,6 +1,6 @@
 // Created by Mr. Coxall updated by Anna S.
 // Created on April 2025
-// This is the Coin Flip game configuration file
+// This is the Coin Flip Phaser game configuration file
 
 // scene import statements
 import MenuScene from './menuScene.js'
@@ -21,10 +21,10 @@ const config = {
     default: 'arcade',
     arcade: {
       debug: false
-    },
+    }
   },
   // set background color
-  backgroundColor:rgb(207, 195, 235),
+  backgroundColor: rgb(207, 195, 235),
   scale: {
     mode: Phaser.Scale.FIT,
     // we place it in the middle of the page
@@ -32,7 +32,7 @@ const config = {
   }
 }
 const game = new Phaser.Game(config)
-//console.log(game)
+// console.log(game)
 
 // load scenes
 // Note: remember any "key" is global and can not be reused
