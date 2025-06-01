@@ -1,4 +1,4 @@
-/*global Phaser*/
+/* global Phaser */
 // Created by: Anna S.
 // Created on: May 2025
 // This is Menu Scene
@@ -15,7 +15,7 @@ class MenuScene extends Phaser.Scene {
     this.backgroundMenu = null
     this.startButton = null
   }
-  
+
   /**
    * Can be define on your own Scenes.
    * This method is called by the Scene Manager when the scene starts,
@@ -25,7 +25,7 @@ class MenuScene extends Phaser.Scene {
   init (data) {
     this.cameras.main.setBackgroundColor('ffffff')
   }
-
+  
   /**
    * Can be defined own your own Scenes.
    * Use it to load assets.
