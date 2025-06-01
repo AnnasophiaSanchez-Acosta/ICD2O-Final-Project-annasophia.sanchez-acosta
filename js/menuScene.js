@@ -25,7 +25,6 @@ class MenuScene extends Phaser.Scene {
   init (data) {
     this.cameras.main.setBackgroundColor('ffffff')
   }
-  
   /**
    * Can be defined own your own Scenes.
    * Use it to load assets.
