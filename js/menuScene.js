@@ -14,7 +14,6 @@ class MenuScene extends Phaser.Scene {
     this.backgroundMenu = null
     this.startButton = null
   }
-  
   /**
    * Can be define on your own Scenes.
    * This method is called by the Scene Manager when the scene starts,
@@ -22,7 +21,7 @@ class MenuScene extends Phaser.Scene {
    * @param {object} data - Any data passed via ScenePlugin.add() or  ScenePlugin.start().
    */
   init (data) {
-    this.cameras.main.setBackgroundColor("ffffff")
+    this.cameras.main.setBackgroundColor('ffffff')
   }
 
   /**
@@ -45,7 +44,7 @@ class MenuScene extends Phaser.Scene {
     this.backgroundMenu.x = 1920 / 2
     this.backgroundMenu.y = 1080 / 2
     this.startButton = this.add.sprite (1920 / 2, 1080 / 2 + 100, 'Start-Button')
-    this.startButton.setInteractive({ useHandCursor: true })
+    this.startButton.setInteractive({useHandCursor: true })
     this.startButton.on('pointerdown', () => this.clickButton())
   }
 
@@ -56,7 +55,7 @@ class MenuScene extends Phaser.Scene {
    * @param {} delta The delta time in ms since the last frame.
    */
   update (time, delta) {
-     // 
+    //
   }
 
   clickButton () {
