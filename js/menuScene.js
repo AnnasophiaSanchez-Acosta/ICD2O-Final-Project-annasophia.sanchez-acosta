@@ -14,6 +14,7 @@ class MenuScene extends Phaser.Scene {
     this.backgroundMenu = null
     this.startButton = null
   }
+  
   /**
    * Can be define on your own Scenes.
    * This method is called by the Scene Manager when the scene starts,
@@ -43,8 +44,8 @@ class MenuScene extends Phaser.Scene {
     this.backgroundMenu = this.add.sprite(0, 0, 'Background-Menu')
     this.backgroundMenu.x = 1920 / 2
     this.backgroundMenu.y = 1080 / 2
-    this.startButton = this.add.sprite (1920 / 2, 1080 / 2 + 100, 'Start-Button')
-    this.startButton.setInteractive({useHandCursor: true })
+    this.startButton = this.add.sprite(1920 / 2, 1080 / 2 + 100, 'Start-Button')
+    this.startButton.setInteractive({ useHandCursor: true })
     this.startButton.on('pointerdown', () => this.clickButton())
   }
 

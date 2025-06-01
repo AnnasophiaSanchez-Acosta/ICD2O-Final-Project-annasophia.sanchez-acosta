@@ -1,3 +1,4 @@
+/*global Phaser*/
 // Created by Mr. Coxall updated by Anna S.
 // Created on April 2025
 // This is the Coin Flip Phaser game configuration file
