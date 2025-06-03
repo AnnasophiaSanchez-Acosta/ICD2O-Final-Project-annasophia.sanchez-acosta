@@ -15,9 +15,9 @@ class GameScene extends Phaser.Scene {
   }
 
   preload () {
-    this.load.image('heads', './images/heads-coin.png')
-    this.load.image('tails', './images/tails-coin.png')
-    this.load.image('flipButton', './images/flipButton.png')
+    this.load.image('heads', './assets/heads-coin.png')
+    this.load.image('tails', './assets/tails-coin.png')
+    this.load.image('flipButton', './assets/flipButton.png')
   }
 
   create () {
@@ -44,20 +44,30 @@ class GameScene extends Phaser.Scene {
   }
 
   flipCoin () {
-    let answer
-    if (Math.random() < 0.5) {
-      answer = 'heads'
-    } else {
-      answer = 'tails'
-    }
-
-    this.coinImage.setTexture(answer) // ← update the coin image
-
-    this.flipCount++
-    this.scoreText.setText('Flips: ' + this.flipCount)
-    this.resultText.setText(
-      'Result: ' + answer.charAt(0).toUpperCase() + answer.slice(1)
-    )
+    // Hide the coin image
+    this.coinImage.setVisible(false)
+  
+    // Optional: clear the result text while waiting
+    this.resultText.setText('Flipping...')
+  
+    // Wait 3 seconds, then show result
+    this.time.delayedCall(1000, () => {
+      let answer
+      if (Math.random() < 0.5) {
+        answer = 'heads'
+      } else {
+        answer = 'tails'
+      }
+  
+      this.coinImage.setTexture(answer) // update the coin image
+      this.coinImage.setVisible(true)   // make it visible again
+  
+      this.flipCount++
+      this.scoreText.setText('Flips: ' + this.flipCount)
+      this.resultText.setText(
+        'Result: ' + answer.charAt(0).toUpperCase() + answer.slice(1)
+      )
+    }, [], this)
   }
 }
 
