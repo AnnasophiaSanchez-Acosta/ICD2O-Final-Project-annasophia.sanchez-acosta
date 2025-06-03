@@ -45,10 +45,10 @@ class GameScene extends Phaser.Scene {
   flipCoin () {
     // Hide the coin image
     this.coinImage.setVisible(false)
-  
+
     // Optional: clear the result text while waiting
     this.resultText.setText('Flipping...')
-  
+
     // Wait 3 seconds, then show result
     this.time.delayedCall(1000, () => {
       let answer
@@ -57,10 +57,10 @@ class GameScene extends Phaser.Scene {
       } else {
         answer = 'tails'
       }
-  
+
       this.coinImage.setTexture(answer) // update the coin image
-      this.coinImage.setVisible(true)   // make it visible again
-  
+      this.coinImage.setVisible(true) // make it visible again
+
       this.flipCount++
       this.scoreText.setText('Flips: ' + this.flipCount)
       this.resultText.setText(
