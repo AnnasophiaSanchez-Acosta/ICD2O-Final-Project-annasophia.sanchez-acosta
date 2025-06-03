@@ -23,7 +23,7 @@ class GameScene extends Phaser.Scene {
     this.coinImage = this.add
       .image(this.cameras.main.centerX, 300, 'heads')
       .setScale(0.5)
-      
+
     this.scoreText = this.add.text(20, 20, 'Flips: 0', {
       fontSize: '32px',
       color: '#000000'
