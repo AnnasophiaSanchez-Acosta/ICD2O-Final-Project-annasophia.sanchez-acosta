@@ -6,7 +6,6 @@
 class GameScene extends Phaser.Scene {
   constructor () {
     super({ key: 'gameScene' })
-
     this.coinImage = null
     this.flipButton = null
     this.scoreText = null
