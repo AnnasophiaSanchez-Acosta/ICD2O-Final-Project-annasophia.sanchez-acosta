@@ -3,73 +3,49 @@
 // Created on: May 2025
 // This is Game Scene
 
-/**
- * This class is Game Scene
- */
-export class GameScene extends Phaser.Scene {
-  constructor() {
-    super({ key: 'GameScene' });
+class GameScene extends Phaser.Scene {
+  constructor () {
+    super({ key: 'gameScene' })
 
-    // Initialize variables here if you want
-    this.coinImage = null;
-    this.resultText = null;
-    this.albumImages = [];
-    this.albumX = 50;
-    this.albumY = 550;
-    this.flipKey = null;
+    this.coinImage = null
+    this.flipButton = null
+    this.scoreText = null
+    this.resultText = null
+    this.flipCount = 0
   }
 
-  preload() {
-    this.load.image('heads', 'heads.png');
-    this.load.image('tails', 'tails.png');
+  preload () {
+    this.load.image('heads', './images/heads-coin.png')
+    this.load.image('tails', './images/tails-coin.png')
+    this.load.image('flipButton', './images/flipButton.png')
   }
 
-  create() {
-    this.coinImage = this.add.image(400, 250, 'heads').setScale(0.5);
+  create () {
+    this.coinImage = this.add.image(this.cameras.main.centerX, 300, 'heads').setScale(0.5)
 
-    this.resultText = this.add.text(300, 400, '', {
-      fontSize: '24px',
-      color: '#000000',
-    });
+    this.scoreText = this.add.text(20, 20, 'Flips: 0', {
+      fontSize: '32px',
+      color: '#000000'
+    })
 
-    this.add.text(250, 470, 'Press "F" to Flip the Coin', {
+    this.resultText = this.add.text(20, 60, '', {  // new text below flips count
       fontSize: '28px',
-      color: '#333333',
-    });
+      color: '#000000'
+    })
 
-    this.flipKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.F);
+    this.flipButton = this.add.image(this.cameras.main.centerX, 650, 'flipButton').setScale(0.5)
+    this.flipButton.setInteractive({ useHandCursor: true })
+    this.flipButton.on('pointerdown', () => this.flipCoin())
   }
 
-  update() {
-    if (Phaser.Input.Keyboard.JustDown(this.flipKey)) {
-      this.flipCoin();
-    }
-  }
+  flipCoin () {
+    let answer = Math.random() < 0.5 ? 'heads' : 'tails'
+    this.coinImage.setTexture(answer)
 
-  flipCoin() {
-    let answer;
-    if (Math.random() < 0.5) {
-      answer = 'Yes';
-    } else {
-      answer = 'No';
-    }
-
-    if (answer === 'Yes') {
-      this.coinImage.setTexture('heads');
-    } else {
-      this.coinImage.setTexture('tails');
-    }
-
-    this.resultText.setText('Answer: ' + answer);
-
-    const smallKey = answer === 'Yes' ? 'heads' : 'tails';
-    const smallImg = this.add.image(this.albumX, this.albumY, smallKey).setScale(0.2);
-    this.albumImages.push(smallImg);
-
-    this.albumX += 60;
-    if (this.albumX > 740) {
-      this.albumX = 50;
-      this.albumY += 60;
-    }
+    this.flipCount++
+    this.scoreText.setText('Flips: ' + this.flipCount)
+    this.resultText.setText('Result: ' + answer.charAt(0).toUpperCase() + answer.slice(1)) 
   }
 }
+
+export default GameScene
