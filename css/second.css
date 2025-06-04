@@ -1,29 +1,25 @@
-.mdl-layout__header-row {
-  justify-content: center;
-  padding: 0;
-}
-
-.mdl-layout__content {
-  justify-content: center;
-}
-
-.mdl-textfield__error {
-  color: lightgreen;
-}
-
-.page-content {
-  color: rgb(69, 34, 186);
-  font-family: Helvetica, Arial, sans-serif;
-  font-size: 1.25rem;
-  text-align: center;
-  justify-content: center;
-}
-
+/** Created on: Sep 2020
+* This file contains the CSS for index.html
+*/
 body {
-  background: #e1d6fa;
+  background: #e2d8fa;
 }
 
+.coin-container {
 img {
-  margin-left: 50px;
-  justify-content: center;
+    position: fixed;
+    margin-top: 70px;
+    margin-left: 240px;
+    width: 70vw;
+    height: 77vh;
+  }
+}
+
+.flip-container {
+  position: auto;
+  margin-top: 1300px;
+  margin-left: 240px;
+  width: 10vw;
+  height: 15vh;
+  font-size: 50px;
 }

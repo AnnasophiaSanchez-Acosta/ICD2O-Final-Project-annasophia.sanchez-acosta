@@ -38,20 +38,15 @@
 
   <body>
     <script src="./js/script.js"></script>
-    <div class="image-container">
-      <div id="Heads"><img src="./assets/heads.png" alt="Heads Coin" /></div>
-      <div id="Tails"><img src="./assets/tails.png" alt="Tails Coin" /></div>
+    <div class="coin-container">
+      <div id="heads"><img src="./assets/heads.png" alt="Heads Coin" /></div>
+      <div id="tails"><img src="./assets/tails.png" alt="Tails Coin" /></div>
+      <div id="flip"><img src="./assets/flip.gif" alt="Fliping coin" /></div>
     </div>
-    <br />
-    <button>
-      <div class="flip-button">
-        <img
-          src="./assets/flip-Button.png"
-          alt="flip Button"
-          onclick="flipCoin()"
-          type="button"
-        />
-      </div>
+    <button class="flip-container"
+     onclick="flipCoin()">
+      <img src="./assets/flipButton.png" alt="Flip Button Image" 
+      type button/>
     </button>
   </body>
 </html>
