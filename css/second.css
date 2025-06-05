@@ -7,19 +7,52 @@ body {
 
 .coin-container {
 img {
-    position: fixed;
+    position: auto;
     margin-top: 70px;
     margin-left: 240px;
     width: 70vw;
     height: 77vh;
+    justify-content: center;
+  }
+}
+
+.gif-container {
+  img {
+    position: auto;
+    margin-top: 70px;
+    margin-left: 790px;
+    width: 70vw;
+    height: 77vh;
+    justify-content: center;
   }
 }
 
 .flip-container {
-  position: auto;
-  margin-top: 1300px;
-  margin-left: 240px;
-  width: 10vw;
-  height: 15vh;
+  position: relative;
+  margin-top: 2000px;
+  margin-left: 2800px;
+  width: 550px;
+  height: 300px;
   font-size: 50px;
+  justify-content: center;
+}
+
+.flip-container {
+  img {
+    justify-content: center;
+    position: relative;
+    margin-top: 2000px;
+    margin-left: 2800px;
+    width: 350ww;
+    height: 200wh;
+    font-size: 50px;
+ }
+}
+
+img {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
 }
