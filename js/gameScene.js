@@ -14,8 +14,8 @@ class GameScene extends Phaser.Scene {
   }
 
   preload () {
-    this.load.image('heads', './assets/heads.png')
-    this.load.image('tails', './assets/tails.png')
+    this.load.image('heads', './assets/heads-coin.png')
+    this.load.image('tails', './assets/tails-coin.png')
     this.load.image('flipButton', './assets/flipButton.png')
   }
 
@@ -66,7 +66,7 @@ class GameScene extends Phaser.Scene {
       this.resultText.setText(
         'Result: ' + answer.charAt(0).toUpperCase() + answer.slice(1)
       )
-    }, [], this)
+    }, [],)
   }
 }
 
