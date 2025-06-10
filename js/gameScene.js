@@ -66,7 +66,7 @@ class GameScene extends Phaser.Scene {
       this.resultText.setText(
         'Result: ' + answer.charAt(0).toUpperCase() + answer.slice(1)
       )
-    }, [],)
+    }, [])
   }
 }
 
