@@ -14,8 +14,8 @@ class GameScene extends Phaser.Scene {
   }
 
   preload () {
-    this.load.image('heads', './assets/heads-coin.png')
-    this.load.image('tails', './assets/tails-coin.png')
+    this.load.image('heads', './assets/heads.png')
+    this.load.image('tails', './assets/tails.png')
     this.load.image('flipButton', './assets/flipButton.png')
   }
 
@@ -53,9 +53,9 @@ class GameScene extends Phaser.Scene {
     this.time.delayedCall(1000, () => {
       let answer
       if (Math.random() < 0.5) {
-        answer = 'heads'
+        answer = 'heads' + ' coin!'
       } else {
-        answer = 'tails'
+        answer = 'tails' + ' coin!'
       }
 
       this.coinImage.setTexture(answer) // update the coin image
@@ -66,7 +66,7 @@ class GameScene extends Phaser.Scene {
       this.resultText.setText(
         'Result: ' + answer.charAt(0).toUpperCase() + answer.slice(1)
       )
-    }, [], this)
+    }, [])
   }
 }
 
