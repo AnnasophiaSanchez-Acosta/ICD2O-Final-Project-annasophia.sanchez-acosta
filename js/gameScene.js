@@ -53,9 +53,9 @@ class GameScene extends Phaser.Scene {
     this.time.delayedCall(1000, () => {
       let answer
       if (Math.random() < 0.5) {
-        answer = 'heads' + ' coin!'
+        answer = 'heads'
       } else {
-        answer = 'tails' + ' coin!'
+        answer = 'tails'
       }
 
       this.coinImage.setTexture(answer) // update the coin image
@@ -66,7 +66,7 @@ class GameScene extends Phaser.Scene {
       this.resultText.setText(
         'Result: ' + answer.charAt(0).toUpperCase() + answer.slice(1)
       )
-    }, [])
+    })
   }
 }
 
